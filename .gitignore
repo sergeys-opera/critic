@@ -13,3 +13,5 @@ critic_review.egg-info/
 critic-1.0.0-py3-none-any.whl
 src/critic.egg-info/
 .dmypy.json
+.idea
+.venv
