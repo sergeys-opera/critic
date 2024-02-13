@@ -6,7 +6,7 @@
 !docker/conf
 
 # Include all Python source code, and package metadata.
-!critic
+!src/critic
 !README.rst
 !requirements.txt
 !setup.py
