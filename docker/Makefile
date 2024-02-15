@@ -53,7 +53,7 @@ frontend: dockerfiles/Dockerfile.frontend$(flavor_suffix) base
 postgresql: dockerfiles/Dockerfile.postgresql
 	$(docker) build $(docker_build_args) --build-arg version=$(version) -t critic/postgresql:$(tag) -f $< $(context)
 
-ui: dockerfiles/Dockerfile.ui
+ui: dockerfiles/Dockerfile.ui-dev
 	$(docker) build $(docker_build_args) -t critic/ui:$(tag) -f $< $(context)
 
 httpd: dockerfiles/Dockerfile.httpd ui

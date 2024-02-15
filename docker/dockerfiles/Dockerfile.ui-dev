@@ -1,0 +1,23 @@
+FROM node:alpine AS builder
+
+RUN apk add --update gzip
+#RUN apk add --update brotli
+
+WORKDIR /ui
+
+ADD ui/package*.json ./
+RUN npm ci
+
+ADD ui/*.json ./
+ADD ui/webpack.*.js ./
+ADD ui/src src
+ADD ui/public public
+ADD extensions/email-delivery/uiaddon src/extensions/EmailDelivery
+RUN npm run-script build-development
+
+RUN gzip -9 -k --suffix .map dist/static/js/*.js
+#RUN brotli -9 -k --suffix=.map dist/static/js/*.js
+
+FROM scratch
+
+COPY --from=builder /ui/dist /build
