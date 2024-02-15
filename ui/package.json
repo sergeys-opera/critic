@@ -37,7 +37,7 @@
     "clean-webpack-plugin": "^3.0.0",
     "dotenv": "^7.0.0",
     "html-webpack-plugin": "^4.5.2",
-    "immer": "^8.0.4",
+    "immer": "^10.0.3",
     "json2mq": "^0.2.0",
     "markdown-it": "^12.0.4",
     "md5": "^2.3.0",
@@ -65,7 +65,7 @@
     "prettier": "^2.2.1",
     "webpack-bundle-analyzer": "^4.4.1",
     "webpack-cli": "^4.6.0",
-    "webpack-dev-server": "^3.11.2",
+    "webpack-dev-server": "^5.0.1",
     "webpack-merge": "^5.7.3"
   },
   "scripts": {
