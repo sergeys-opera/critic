@@ -21,7 +21,7 @@ RUN \
     install -r /critic-review/requirements.txt
 
 COPY setup.py README.rst /critic-review/
-COPY src/critic /critic-review/critic
+COPY src/critic /critic-review/src/critic
 
 RUN \
   /var/lib/critic/bin/pip --no-cache-dir --disable-pip-version-check \
