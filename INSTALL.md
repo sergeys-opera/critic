@@ -1,1 +1,1 @@
-critic/tutorials/INSTALL.md
+src/critic/tutorials/INSTALL.md
