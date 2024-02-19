@@ -164,7 +164,7 @@ async def invokeHttpBackend(
     else:
         await input_queue.put(b"")
 
-    await asyncio.gather(*tasks, loop=loop)
+    await asyncio.gather(*tasks)
 
     logger.debug("tasks done: %r", response)
 

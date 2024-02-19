@@ -100,7 +100,7 @@ class MessageChannel(Generic[InputMessage, OutputMessage]):
 
             try:
                 self.client = BinaryProtocolClient(
-                    *await asyncio.open_unix_connection(socket_path, loop=self.loop)
+                    *await asyncio.open_unix_connection(socket_path)
                 )
                 await self.client.handshake(BinaryProtocol.PROTOCOL_PICKLE)
             except ConnectionRefusedError:

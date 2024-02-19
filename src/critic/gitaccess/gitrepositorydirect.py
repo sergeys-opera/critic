@@ -191,7 +191,6 @@ class GitRepositoryDirect(GitRepositoryImpl):
                 stdin=asyncio.subprocess.PIPE,
                 stdout=asyncio.subprocess.PIPE,
                 cwd=path,
-                loop=self.loop,
                 env=self.__environ,
             )
 
@@ -283,7 +282,6 @@ class GitRepositoryDirect(GitRepositoryImpl):
         return await asyncio.create_subprocess_exec(
             git(),
             *argv,
-            loop=self.loop,
             cwd=cwd,
             env=self.__environ | {"GIT_TERMINAL_PROMPT": "0"},
             stdin=stdin_mode,
@@ -697,7 +695,6 @@ class GitRepositoryDirect(GitRepositoryImpl):
             stdin=asyncio.subprocess.PIPE,
             stdout=asyncio.subprocess.PIPE,
             stderr=asyncio.subprocess.PIPE,
-            loop=self.loop,
         )
 
         # logger.debug("pid: %d", process.pid)
