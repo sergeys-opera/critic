@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.6
+#!/usr/bin/env python3
 # -*- mode: python; encoding: utf-8 -*-
 #
 # Copyright 2013 Jens Lindström, Opera Software ASA
