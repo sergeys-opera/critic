@@ -71,6 +71,8 @@ def identify_os(arguments: Any = None) -> Optional[str]:
                 return "debian"
             if value == "Ubuntu":
                 return "ubuntu"
+            if value == "Linux Mint":
+                return "mint"
             fail("Unsupported OS: %r (from /etc/os-release)" % value)
 
     if arguments:
@@ -108,6 +110,7 @@ PACKAGE_INSTALLATION: Mapping[
 ] = {
     "debian": (apt_get_install, {}),
     "ubuntu": (apt_get_install, {}),
+    "mint": (apt_get_install, {}),
 }
 
 
@@ -255,6 +258,7 @@ class AddGroup(Protocol):
 USER_GROUP_CREATION: Mapping[str, Tuple[AddUser, AddGroup]] = {
     "debian": (adduser_debian, addgroup_debian),
     "ubuntu": (adduser_debian, addgroup_debian),
+    "mint": (adduser_debian, addgroup_debian),
     "alpine": (adduser_alpine, addgroup_alpine),
 }
 
