@@ -12,6 +12,7 @@ import shutil
 import sys
 import tempfile
 import time
+from pathlib import Path
 from typing import (
     Any,
     AsyncIterator,
@@ -170,7 +171,7 @@ class System:
                         os.path.join(self.state_dir, "bin", "pip"),
                         "install",
                         "-e",
-                        os.path.dirname(os.path.abspath(__file__)),
+                        Path(__file__).parent.parent.parent.absolute(),
                     )
 
         if not os.path.isfile(
